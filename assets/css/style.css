@@ -1,0 +1,10 @@
+* {
+    margin: 0;
+}
+html, body{
+    background-image: url("../images/question-marks.png");
+}
+#funnyTitle {
+    color: #8b008b;
+
+}
