@@ -41,24 +41,24 @@ var countdownTimer = {
 var correct =0;
 var incorrect =0;
 var q1 = {
-	question : 'Who was the host for Kitchen Kabaret?',
-	possibleAnswers : ['A. Fud Wrapper', 'B. Cookie Ann Milk', 'C. Bonnie Appetit', 'D. Cherry Ontop'],
+	question : 'What type of bridge is the Golden Gate Bridge?',
+	possibleAnswers : ['A. Cable-stayed', 'B. Cantilever', 'C. Suspension', 'D. Arch'],
 	flags : [false, false, true, false],
-	answer : 'C. Bonnie Appetit'
+	answer : 'C. Suspension'
 };
 
 var q2 = {
-	question: 'Who starred in the title role of Condorman?',
-	possibleAnswers: ['A. Zac Efron', 'B. Michael Crawford', 'C. Billy Crystal', 'D. Michael Keaton'],
+	question: 'Bruce Banner turns into what fictional superhero when he becomes angry?',
+	possibleAnswers: ['A. Superman', 'B. The Hulk', 'C. Abomination', 'D. Batman'],
 	flags : [false, true, false, false],
-	answer : 'B. Michael Crawford'
+	answer : 'B. The Hulk'
 };
 
 var q3 = {
-	question : 'In Captain EO, what is the name of the elephant like alien?',
-	possibleAnswers : ['A. Trunks', 'B. Hooter', 'C. Elle', 'D. Odie'],
+	question : 'What do the letters in the acronym CD-ROM stand for?',
+	possibleAnswers : ['A. Compact Disk Random Only Memory', 'B. Compact Disk Read Only Memory', 'C. Closed Disk Read Only Memory', 'D. Central Disk Read On Memory'],
 	flags : [false, true, false, false],
-	answer : 'B. Hooter'
+	answer : 'B. Compact Disk Read Only Memory'
 };
 
 var q4 = {
@@ -69,45 +69,45 @@ var q4 = {
 };
 
 var q5 = {
-	question : 'What country was welcomed into the World Showcase at EPCOT Center in 1984?',
-	possibleAnswers : ['A. Norway', 'B. Morocco', 'C. France', 'D. Japan'],
+	question : 'Which planet in our solar system spins the fastest?',
+	possibleAnswers : ['A. Pluto', 'B. Jupiter', 'C. Mars', 'D. Saturn'],
 	flags : [false, true, false, false],
-	answer : 'B. Morocco'
+	answer : 'B. Jupiter'
 };
 
 var q6 = {
-	question : 'In 1981 a Disney constructed WED-Way People Mover opened at which airport?',
-	possibleAnswers : ['A. Houston Intercontinental Airport', 'B. Orlando International Airport', 'C. Atlanta International Airport', 'D. Dallas/Ft. Worth International Airport'],
+	question : 'Created in 2009, what was the first decentralized cryptocurrency?',
+	possibleAnswers : ['A. Bitcoin', 'B. Litecoin', 'C. Bitbucket', 'D. AES256'],
 	flags : [true, false, false, false],
-	answer : 'A. Houston Intercontinental Airport'
+	answer : 'A. Bitcoin'
 };
 
 var q7 = {
-	question : 'What school is attended in the Disney Channel Series, Girl Meets World?',
-	possibleAnswers : ['A. Vintage High School', 'B. Peyton Middle School', 'C. John Quincy Adams Middle School', 'D. Washington High School'],
+	question : 'Nintendo is a consumer electronics and video game company founded in what country?',
+	possibleAnswers : ['A. United States', 'B. Canada', 'C. Japan', 'D. China'],
 	flags : [false, false, true, false],
-	answer : 'C. John Quincy Adams Middle School'
+	answer : 'C. Japan'
 };
 
 var q8 = {
-	question : 'Which Walt Disney World location opened on the same day as the Disney-MGM Studios theme park on May 1, 1989?',
-	possibleAnswers : ['A. Typhoon Lagoon', 'B. Pleasure Island', 'C. Both A & B', 'D. None of the above'],
+	question : 'What does the acronym USB stand for when referring to a computer port?',
+	possibleAnswers : ['A. Universal Serial Bridge', 'B. Universal Serial Bus', 'C. United States Born', 'D. Universal State Bus'],
 	flags : [false, true, false, false],
-	answer : 'B. Pleasure Island'
+	answer : 'B. Universal Serial Bus'
 };
 
 var q9 = {
-	question : 'Which of the following films is NOT part of the Walt Disney Studios Silly Symphonies?',
-	possibleAnswers : ['A. The Night Before Christmas', 'B. Three Little Pigs', 'C. The Old Mill', 'D. The Gallopin\' Gaucho'],
+	question : 'When referring to a computer monitor, what does the acronym LCD stand for?',
+	possibleAnswers : ['A. Laser Crystal Display', 'B. Liquid Crystal Diode', 'C. Laser Crystal Diode', 'D. Liquid Crystal Display'],
 	flags : [false, false, false, true],
-	answer : 'D. The Gallopin\' Gaucho'
+	answer : 'D. Liquid Crystal Display'
 };
 
 var q10 = {
-	question : 'Which wartime activity did the Walt Disney Studios partake in to support the American war effort?',
-	possibleAnswers : ['A. Recycling used film footage', 'B. Designing US Army & US Navy insignia', 'C. Hosted a Studio Victory Garden where employees grew food for their families', 'D. Forced employees to carpool by closing parking lots to non-carpool cars'],
+	question : 'In 1975 an engineer created the first electronic camera while working for what company?',
+	possibleAnswers : ['A. General Electric', 'B. Kodak', 'C. IBM', 'D. Sun Microsystems'],
 	flags : [false, true, false, false],
-	answer : 'B. Designing US Army & US Navy insignia'
+	answer : 'B. Kodak'
 };
 
 var questionArray = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10];
@@ -132,22 +132,14 @@ $("#startGame").on("click",function(){
 });
 
 
-// function getAnswer() {
-//     $(".answerChoice").on("click", function() {
-//       index++;
-//       $(".question").text('');
-//       $("#buttonA").text('');
-//       $("#buttonB").text('');
-//       $("#buttonC").text('');
-//       $("#buttonD").text('');
-//       loadQuestion();
-//     })
-// };
+
 
 function answerCorrect() {
     correct++;
-    $("#right").html("<h3>" + correct + "</h3>");
-    alert("Correct!");
+	$("#right").html("<h3>" + correct + "</h3>");
+	$("#question").empty();
+	$("#question").append("<h3>You Are Correct!</h3>");
+    // alert("Correct!");
     };
 
 function answerWrong() {
@@ -161,7 +153,8 @@ function showScore() {
     $("#question").append("<h2><p>" + correct + " correct!</p></h2>");
     $("#question").append("<h2><p>" + incorrect + " incorrect!</p></h2>");
     countdownTimer.stop();
-    $("#timer").empty();
+	$("#timer").empty();
+	$("#startGame").show();
 };
 
 // init();
